@@ -42,9 +42,9 @@ with open(file_to_load) as data_revenue:
     revenue_avg = sum(revenue_changes) / len(revenue_changes)
 
 # Print Output
-    print()
-    print()
-    print()
+    #print()
+    #print()
+    #print()
     print("Financial Analysis")
     print("-------------------------")
     print("Total Months: " + str(total_months))
