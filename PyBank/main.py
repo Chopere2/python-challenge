@@ -2,8 +2,8 @@
 import csv
 
 # Load files
-file_to_load = "budget_data.csv"
-file_to_output = "budget_analysis.txt"
+file_to_load = "Resources/budget_data.csv"
+file_to_output = "Resources/budget_analysis.txt"
 
 # declare Variables
 total_months = 0
@@ -35,7 +35,7 @@ with open(file_to_load) as data_revenue:
 
     if (revenue_change < greatest_decrease[1]):
         greatest_decrease[1] = revenue_change
-         greatest_decrease[0] = row["Date"]
+        greatest_decrease[0] = row["Date"]
 
 # Add to the revenue_changes list and set revenue average
     revenue_changes.append(int(row["Revenue"]))
