@@ -21,11 +21,11 @@ with open(file_to_load) as data_revenue:
 # Loop through rows of data and get the totals
     for row in reader:
         total_months = total_months + 1
-        total_revenue = total_revenue + int(row["Revenue"])
-        revenue_change = int(row["Revenue"]) - prev_revenue
+        total_revenue = total_revenue + int(row["Profit/Losses"])
+        revenue_change = int(row["Profit/Losses"]) - prev_revenue
 
 # Reset the value of prev_revenue to the row I completed my analysis
-    prev_revenue = int(row["Revenue"])
+    prev_revenue = int(row["Profit/Losses"])
 
 # Determine the greatest increase
 
@@ -38,7 +38,7 @@ with open(file_to_load) as data_revenue:
         greatest_decrease[0] = row["Date"]
 
 # Add to the revenue_changes list and set revenue average
-    revenue_changes.append(int(row["Revenue"]))
+    revenue_changes.append(int(row["Profit/Losses"]))
     revenue_avg = sum(revenue_changes) / len(revenue_changes)
 
 # Print Output
