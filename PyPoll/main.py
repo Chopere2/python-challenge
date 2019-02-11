@@ -30,21 +30,15 @@ with open(file_to_load) as data_election:
         candidate_votes[row["Candidate"]] = candidate_votes[row["Candidate"]] + 1
 
 
-# find the Winner:
-if (votes > winner_votes[2]):
-greatest_increase[1] = revenue_change
-greatest_increase[0] = row["Candidate"]
-#print()
-#print()
-#print()
+#find the Winner:
 print("Election Results")
 print("-------------------------")
 print("Total Votes " + str(votes))
 print("-------------------------")
 #results
 for candidate in candidate_votes:
-    print(candidate + " " + str(round(((candidate_votes[candidate]/votes)*100))) + "%" + " (" + str(candidate_votes[candidate]) + ")") 
-    candidate_results = (candidate + " " + str(round(((candidate_votes[candidate]/votes)*100))) + "%" + " (" + str(candidate_votes[candidate]) + ")") 
+    print(candidate + " " + str(round((candidate_votes[candidate]/votes)*100)) + "%" + " (" + str(candidate_votes[candidate]) + ")") 
+    candidate_results = (candidate + " " + str(round((candidate_votes[candidate]/votes)*100)) + "%" + " (" + str(candidate_votes[candidate]) + ")") 
     candidate_votes  
     winner = sorted(candidate_votes.items(), key=itemgetter(1), reverse=True)
 
@@ -55,15 +49,16 @@ print("-------------------------")
 
 #File Output
 with open(file_to_output, "w") as txt_file:
+    txt_file.write("Total Votes " + str(votes))
+    txt_file.write("\n")
     txt_file.write("Election Results")
     txt_file.write("\n")
     txt_file.write("-------------------------")
     txt_file.write("\n")
-    txt_file.write(candidate + " " + str(round(((candidate_votes[candidate]/votes)*100))) + "%" + " (" + str(candidate_votes[candidate]) + ")")
     txt_file.write(str(winner))
     txt_file.write("\n")
     txt_file.write("-------------------------")
     txt_file.write("\n")
     txt_file.write("Winner: " + str(winner[0]))
-    txt_file.write("\n")
-    txt_file.write("Total Votes " + str(votes))
+    
+   
